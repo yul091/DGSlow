@@ -1,0 +1,16 @@
+transformers==4.24.0
+datasets==2.7.1
+evaluate==0.4.0
+rouge_score
+nltk
+sacrebleu
+tqdm==4.64.1
+matplotlib
+stanza
+supar==1.1.4
+scikit-learn==0.24
+OpenAttack
+tensorflow_hub==0.12.0
+tensorflow
+sentence_transformers
+language_tool_python==2.7.1
