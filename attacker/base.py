@@ -193,6 +193,7 @@ class SlowAttacker(BaseAttacker):
         select_beams: int = 1,
         eos_weight: float = 0.5,
         cls_weight: float = 0.5,
+        delta: float = 0.5,
         use_combined_loss: bool = False,
     ):
         super(SlowAttacker, self).__init__(
@@ -204,6 +205,7 @@ class SlowAttacker(BaseAttacker):
             self.sp_token = '<SEP>'
         self.select_beam = select_beams
         self.fitness = fitness
+        self.delta = delta
         self.eos_weight = eos_weight
         self.cls_weight = cls_weight
         self.use_combined_loss = use_combined_loss
@@ -301,8 +303,8 @@ class SlowAttacker(BaseAttacker):
         elif self.fitness == 'adaptive':
             assert len(pred_len) == len(pred_acc)
             q = np.mean([self.sent_encoder.get_sim(prototype, x[1]) for x in new_strings])
-            preference = (it - 1) * np.exp(q - 1) / (self.max_per - 1)
-            if preference > 0.5:
+            preference = it * np.exp(q - 1) / (self.max_per - 1)
+            if preference > self.delta:
                 # Random search
                 rand_i = np.random.choice(len(pred_len), min(self.select_beam, len(pred_len)), replace=False)
                 return [new_strings[i] for i in rand_i], [pred_len[i] for i in rand_i]

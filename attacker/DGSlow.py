@@ -99,11 +99,12 @@ class StructureAttacker(SlowAttacker):
         select_beams: int = 1,
         eos_weight: float = 0.5,
         cls_weight: float = 0.5,
+        delta: float = 0.5,
         use_combined_loss: bool = False,
     ):
         super(StructureAttacker, self).__init__(
             device, tokenizer, model, max_len, max_per, task, fitness,
-            select_beams, eos_weight, cls_weight, use_combined_loss,
+            select_beams, eos_weight, cls_weight, delta, use_combined_loss,
         )
         self.filter_words = set(ENGLISH_FILTER_WORDS)
         # BERT initialization

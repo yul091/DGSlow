@@ -280,6 +280,7 @@ def main(args: argparse.Namespace):
     att_method = args.attack_strategy
     cls_weight = args.cls_weight
     eos_weight = args.eos_weight
+    delta = args.delta
     use_combined_loss = args.use_combined_loss
     out_dir = args.out_dir
 
@@ -332,6 +333,7 @@ def main(args: argparse.Namespace):
             select_beams=select_beams,
             eos_weight=eos_weight,
             cls_weight=cls_weight,
+            delta=delta,
             use_combined_loss=use_combined_loss,
         )
     elif att_method.lower() == 'pwws':
@@ -477,6 +479,7 @@ if __name__ == "__main__":
     parser.add_argument("--seed", type=int, default=2019, help="Random seed")
     parser.add_argument("--eos_weight", type=float, default=0.8, help="Weight for EOS gradient")
     parser.add_argument("--cls_weight", type=float, default=0.2, help="Weight for classification gradient")
+    parser.add_argument("--delta", type=float, default=0.5, help="Threshold for adaptive search strategy")
     parser.add_argument("--use_combined_loss", action="store_true", help="Use combined loss")
     parser.add_argument("--attack_strategy", "-a", type=str, 
                         default='structure', 
