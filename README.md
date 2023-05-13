@@ -1,6 +1,9 @@
 # DGSlow
 The codebase for the ACL 2023 paper: White-Box Multi-Objective Adversarial Attack on Dialogue Generation.
 
+<p align="center">
+  <img src="figure/DGSlow_attack.png" width="60%" height="60%">
+</p>
 
 ## Quickstart
 
@@ -38,4 +41,18 @@ python attack.py --attack_strategy FD --model_name_or_path results/bart-base --d
 - Transfer attack from DialoGPT-small to bart-base in Blended Skill Talk:
 ```
 python eval.py --file ${FILE} --orig_model bart-base --victim_model dialogpt-small --dataset BST --out_dir logging
+```
+
+
+## Citation
+If you find this repo useful, please cite our paper:
+```bibtex
+@misc{li2023whitebox,
+      title={White-Box Multi-Objective Adversarial Attack on Dialogue Generation}, 
+      author={Yufei Li and Zexin Li and Yingfan Gao and Cong Liu},
+      year={2023},
+      eprint={2305.03655},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
 ```
