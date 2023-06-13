@@ -1,5 +1,5 @@
 # DGSlow
-Implementation of the ACL 2023 paper: White-Box Multi-Objective Adversarial Attack on Dialogue Generation.
+Codebase for ACL 2023 paper: White-Box Multi-Objective Adversarial Attack on Dialogue Generation.
 
 <p align="center">
   <img src="figure/DGSlow_attack.png" width="60%" height="60%">
@@ -14,7 +14,6 @@ Implementation of the ACL 2023 paper: White-Box Multi-Objective Adversarial Atta
 ```
 pip install -r requirements.txt
 ```
-
 
 ### Train and evaluate a model on a specific task(s)
 
@@ -43,14 +42,16 @@ python attack.py --attack_strategy FD --model_name_or_path results/bart-base --d
 python eval.py --file ${FILE} --orig_model bart-base --victim_model dialogpt-small --dataset BST --out_dir logging
 ```
 
-
 ## Citation
 If you find this repo useful, please cite our paper:
 ```bibtex
-@article{li2023white,
+@inproceedings{li2023white,
   title={White-Box Multi-Objective Adversarial Attack on Dialogue Generation},
   author={Li, Yufei and Li, Zexin and Gao, Yingfan and Liu, Cong},
-  journal={arXiv preprint arXiv:2305.03655},
+  booktitle={Annual Meeting of the Association for Computational Linguistics (ACL)},
   year={2023}
 }
 ```
+
+## Acknowledgement
+Our implementation is based on [OpenAttack](https://github.com/thunlp/OpenAttack). We would like to thank the authors for their open source code.
