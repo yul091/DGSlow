@@ -1,5 +1,5 @@
 # DGSlow
-Codebase for ACL 2023 paper: "White-Box Multi-Objective Adversarial Attack on Dialogue Generation" ([PDF](https://aclanthology.org/2023.acl-long.100.pdf)).
+Codebase for the ACL 2023 paper: "White-Box Multi-Objective Adversarial Attack on Dialogue Generation" ([PDF](https://aclanthology.org/2023.acl-long.100.pdf)).
 
 <p align="center">
   <img src="figure/DGSlow_attack.png" width="60%" height="60%">
