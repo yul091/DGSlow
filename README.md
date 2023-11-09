@@ -35,6 +35,9 @@ python attack.py --attack_strategy structure --model_name_or_path results/bart-b
 ```
 python attack.py --attack_strategy FD --model_name_or_path results/bart-base --dataset empathetic_dialogues
 ```
+<p align="center">
+  <img src="figure/attack_example.png" width="100%" height="100%">
+</p>
 
 ### Transfer attack
 - Transfer attack from DialoGPT-small to bart-base in Blended Skill Talk:
