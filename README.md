@@ -46,7 +46,7 @@ python eval.py --file ${FILE} --orig_model bart-base --victim_model dialogpt-sma
 ```
 
 ## Citation
-If you find this repo useful, please cite our paper:
+Please cite the paper in your publications if you find this repo useful:
 ```bibtex
 @inproceedings{li2023white,
   title={White-Box Multi-Objective Adversarial Attack on Dialogue Generation},
